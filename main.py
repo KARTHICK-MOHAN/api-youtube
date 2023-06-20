@@ -9,10 +9,17 @@ pp = pprint.PrettyPrinter(indent=2)
 
 app = Flask(__name__)
 
+CHANNELS = {
+  'qazi': 'UCX6OQ3DkcsbYNE6H8uQQuVA',
+  'mrbeast': 'UCX6OQ3DkcsbYNE6H8uQQuVA',
+  'mkbhd': 'UCBJycsmduvYEL83R_U4JriQ',
+  'pm': 'UC3DkFux8Iv-aYnTRWzwaiBA'
+}
+
 @app.route('/')
 def index():
   url = "https://youtube138.p.rapidapi.com/channel/videos/"
-  querystring = {"id":"UCqrILQNl5Ed9Dz6CGMyvMTQ", 
+  querystring = {"id": CHANNELS['qazi'], 
                  "filter":"uploads_latest", 
                  "hl":"en", "gl":"US"}
   headers = {
